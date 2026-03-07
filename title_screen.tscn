@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://iifynlwmnk8a"]
+
+[ext_resource type="Script" uid="uid://bde73s6d014wj" path="res://title_screen.gd" id="1_ak2if"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_05l2w"]
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ak2if")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 337.0
+offset_top = 185.99997
+offset_right = 1506.0
+offset_bottom = 725.0
+text = "Past runs will appear here."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 47.0
+offset_right = 218.0
+offset_bottom = 88.0
+text = "Play Game            "
+icon = SubResource("ViewportTexture_05l2w")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

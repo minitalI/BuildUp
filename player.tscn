@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmjkfl2rs85i1"]
+
+[ext_resource type="Script" uid="uid://bgjulphoi1b58" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bd2sxufmqe25i" path="res://Buildup mc/mc_crouch_64.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://xnthe50xq4s" path="res://Buildup mc/mc_grab_64.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://cb0mxsb0p2l15" path="res://Buildup mc/mc_idle_64.png" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://mvgrrhlepye3" path="res://Buildup mc/mc_jump_64.png" id="5_dw050"]
+[ext_resource type="Texture2D" uid="uid://di0xf4ykxuaac" path="res://Buildup mc/mc_sit_64.png" id="6_b26j0"]
+[ext_resource type="Texture2D" uid="uid://j0bpsl14ovnx" path="res://Buildup mc/mc_run1_64.png" id="7_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://du872gli7kb4f" path="res://Buildup mc/mc_run2__alt2_64.png" id="8_dw050"]
+[ext_resource type="Texture2D" uid="uid://bq6av1qyi8peb" path="res://Buildup mc/mc_run2_64.png" id="8_nvl01"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}],
+"loop": true,
+"name": &"duck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
+}],
+"loop": true,
+"name": &"grab",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2hs0m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dw050")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b26j0")
+}],
+"loop": true,
+"name": &"sit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dw050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nvl01")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(50, 56)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 255
+script = ExtResource("1_onrkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.9999999)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"walk"
+frame_progress = 0.08290311
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 5)
+shape = SubResource("RectangleShape2D_i3pqv")
