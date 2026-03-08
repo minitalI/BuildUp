@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm2yq33ji7tln"]
+
+[ext_resource type="Script" uid="uid://btl0f3uviakwo" path="res://inventory.gd" id="1_pohso"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pohso")

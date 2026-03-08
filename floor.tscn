@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://itc1rvfoy4g5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh6kn"]
+size = Vector2(24, 22)
 
 [node name="Floor" type="StaticBody2D"]
 

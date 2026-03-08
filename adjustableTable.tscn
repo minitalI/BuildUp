@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ne5rnoih52ot"]
+
+[ext_resource type="PackedScene" uid="uid://2po386ounyov" path="res://adjustableObject.tscn" id="1_ngclg"]
+[ext_resource type="Texture2D" uid="uid://e3bmc3le6j8i" path="res://assets/grabbable_objects/table.png" id="2_if8nt"]
+[ext_resource type="Texture2D" uid="uid://8qigbxf1dn1l" path="res://assets/grabbable_objects/table hovered.png" id="3_4csks"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohxnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_if8nt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4csks")
+}],
+"loop": true,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhl6w"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdg6w"]
+size = Vector2(48, 8)
+
+[node name="grabbableObject" instance=ExtResource("1_ngclg")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ohxnp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-12, 28)
+shape = SubResource("RectangleShape2D_rhl6w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(12, 28)
+shape = SubResource("RectangleShape2D_rhl6w")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_rdg6w")

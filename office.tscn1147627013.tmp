@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bupikhcgmuotp"]
+[gd_scene load_steps=6 format=3 uid="uid://bupikhcgmuotp"]
 
 [ext_resource type="Script" uid="uid://dueufo6ke7hh4" path="res://office.gd" id="1_43ocd"]
 [ext_resource type="PackedScene" uid="uid://bmjkfl2rs85i1" path="res://player.tscn" id="2_hsito"]
 [ext_resource type="PackedScene" uid="uid://c4em74yyucn8d" path="res://chair.tscn" id="2_lcnwv"]
 [ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="3_lcnwv"]
 [ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="4_4i814"]
-[ext_resource type="PackedScene" uid="uid://dm2yq33ji7tln" path="res://inventory.tscn" id="4_lcnwv"]
-[ext_resource type="PackedScene" uid="uid://djw8diwd8haen" path="res://table.tscn" id="5_4i814"]
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -27,6 +25,9 @@ position = Vector2(127, 594)
 
 [node name="Player" parent="." instance=ExtResource("2_hsito")]
 position = Vector2(35, 565)
+run_speed = null
+jump_speed = null
+gravity = null
 
 [node name="Floor" parent="." instance=ExtResource("3_lcnwv")]
 position = Vector2(143, 639)
@@ -52,9 +53,6 @@ scale = Vector2(13, 1)
 position = Vector2(336, 144)
 scale = Vector2(13, 1)
 
-[node name="table" parent="." instance=ExtResource("5_4i814")]
-position = Vector2(202, 595)
-
 [node name="Wall" parent="." instance=ExtResource("4_4i814")]
 position = Vector2(1128, 513)
 scale = Vector2(1, 10)
@@ -62,10 +60,3 @@ scale = Vector2(1, 10)
 [node name="Wall2" parent="." instance=ExtResource("4_4i814")]
 position = Vector2(1074, 157)
 scale = Vector2(1, 10)
-
-[node name="Inventory" parent="." instance=ExtResource("4_lcnwv")]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 1154.0
-offset_bottom = 634.0
