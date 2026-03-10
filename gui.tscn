@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://coskfjqvw3k6c"]
+
+[ext_resource type="Script" uid="uid://rw0m1ddqj1vx" path="res://gui.gd" id="1_6lon5"]
+[ext_resource type="PackedScene" uid="uid://dm2yq33ji7tln" path="res://inventory.tscn" id="1_80edf"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1157.0
+offset_bottom = 656.0
+script = ExtResource("1_6lon5")
+
+[node name="Inventory" parent="." instance=ExtResource("1_80edf")]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 656.0
+
+[node name="Objects Left" type="Label" parent="."]
+layout_mode = 0
+offset_right = 154.0
+offset_bottom = 109.0
+text = "Objects Left: 0"

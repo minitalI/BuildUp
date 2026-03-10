@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://2po386ounyov"]
 
-[ext_resource type="Script" uid="uid://8m6i6jgs1p72" path="res://adjustable_object.gd" id="1_kxmgg"]
+[ext_resource type="Script" uid="uid://8m6i6jgs1p72" path="res://objects/adjustable_object.gd" id="1_c8nv6"]
 
 [node name="adjustableObject" type="StaticBody2D"]
-script = ExtResource("1_kxmgg")
+script = ExtResource("1_c8nv6")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

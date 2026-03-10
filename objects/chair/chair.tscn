@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4em74yyucn8d"]
 
-[ext_resource type="PackedScene" uid="uid://nd0nogi4foc1" path="res://grabbableObject.tscn" id="1_knj3a"]
-[ext_resource type="Texture2D" uid="uid://bd8n2i1qc3lc0" path="res://assets/grabbable_objects/chair_alt.png" id="2_vyh3o"]
-[ext_resource type="Texture2D" uid="uid://p3h40t1hjel7" path="res://assets/grabbable_objects/chair_alt_hovered.png" id="3_no86n"]
+[ext_resource type="PackedScene" uid="uid://nd0nogi4foc1" path="res://objects/grabbableObject.tscn" id="1_densx"]
+[ext_resource type="Texture2D" uid="uid://bd8n2i1qc3lc0" path="res://assets/grabbable_objects/chair_alt.png" id="2_0qftj"]
+[ext_resource type="Texture2D" uid="uid://p3h40t1hjel7" path="res://assets/grabbable_objects/chair_alt_hovered.png" id="3_av0ed"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_humtb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vyh3o")
+"texture": ExtResource("2_0qftj")
 }],
 "loop": true,
 "name": &"default",
@@ -16,7 +16,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_no86n")
+"texture": ExtResource("3_av0ed")
 }],
 "loop": true,
 "name": &"hovered",
@@ -32,7 +32,7 @@ size = Vector2(31, 16.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_humtb"]
 size = Vector2(15.75, 16.75)
 
-[node name="chair" instance=ExtResource("1_knj3a")]
+[node name="chair" instance=ExtResource("1_densx")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_humtb")

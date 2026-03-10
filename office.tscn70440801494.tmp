@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bupikhcgmuotp"]
+[gd_scene load_steps=8 format=3 uid="uid://bupikhcgmuotp"]
 
 [ext_resource type="Script" uid="uid://dueufo6ke7hh4" path="res://office.gd" id="1_43ocd"]
 [ext_resource type="PackedScene" uid="uid://coskfjqvw3k6c" path="res://gui.tscn" id="2_4i814"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="3_lcnwv"]
 [ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="4_4i814"]
 [ext_resource type="PackedScene" uid="uid://djw8diwd8haen" path="res://objects/table/table.tscn" id="5_4i814"]
-[ext_resource type="PackedScene" uid="uid://cuhf4tr0ofx57" path="res://level_checkpoint.tscn" id="7_wruqr"]
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -32,6 +31,9 @@ position = Vector2(471, 597)
 [node name="chair2" parent="." instance=ExtResource("2_lcnwv")]
 position = Vector2(752, 596)
 
+[node name="Player" parent="." instance=ExtResource("2_hsito")]
+position = Vector2(1131, 150)
+
 [node name="Floor" parent="." instance=ExtResource("3_lcnwv")]
 position = Vector2(143, 639)
 scale = Vector2(100, 1)
@@ -55,22 +57,6 @@ position = Vector2(826, 594)
 position = Vector2(515, 519)
 scale = Vector2(1, 10)
 
-[node name="Wall7" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(1, 478)
-scale = Vector2(1, 10)
-
-[node name="Wall8" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(0, 143)
-scale = Vector2(1, 10)
-
-[node name="Wall9" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(-4, -162)
-scale = Vector2(1, 10)
-
-[node name="Wall10" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(2, -516)
-scale = Vector2(1, 10)
-
 [node name="Wall3" parent="." instance=ExtResource("4_4i814")]
 position = Vector2(1137, 479)
 scale = Vector2(1, 10)
@@ -78,57 +64,6 @@ scale = Vector2(1, 10)
 [node name="Wall2" parent="." instance=ExtResource("4_4i814")]
 position = Vector2(1074, 157)
 scale = Vector2(1, 10)
-
-[node name="Floor5" parent="." instance=ExtResource("3_lcnwv")]
-position = Vector2(10, -5)
-scale = Vector2(20, 1)
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 0
-offset_top = -650.0
-offset_right = 1164.0
-offset_bottom = 9.0
-
-[node name="chair3" parent="." instance=ExtResource("2_lcnwv")]
-position = Vector2(449, -53)
-
-[node name="Floor6" parent="." instance=ExtResource("3_lcnwv")]
-position = Vector2(930, -369)
-scale = Vector2(13, 1)
-
-[node name="Floor7" parent="." instance=ExtResource("3_lcnwv")]
-position = Vector2(128, -369)
-scale = Vector2(13, 1)
-
-[node name="Floor8" parent="." instance=ExtResource("3_lcnwv")]
-position = Vector2(418, -369)
-scale = Vector2(13, 1)
-
-[node name="table3" parent="." instance=ExtResource("5_4i814")]
-position = Vector2(804, -52)
-
-[node name="Wall4" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(493, -131)
-scale = Vector2(1, 10)
-
-[node name="Wall5" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(1115, -171)
-scale = Vector2(1, 10)
-
-[node name="Wall6" parent="." instance=ExtResource("4_4i814")]
-position = Vector2(1052, -493)
-scale = Vector2(1, 10)
-
-[node name="Level Checkpoint" parent="." instance=ExtResource("7_wruqr")]
-position = Vector2(329, -6)
-scale = Vector2(7, 0.01)
-
-[node name="Floor9" parent="." instance=ExtResource("3_lcnwv")]
-position = Vector2(965.99994, -8)
-scale = Vector2(50, 1)
-
-[node name="Player" parent="." instance=ExtResource("2_hsito")]
-position = Vector2(38, 591)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 324)

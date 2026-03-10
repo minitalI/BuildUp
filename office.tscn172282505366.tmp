@@ -105,7 +105,7 @@ position = Vector2(418, -369)
 scale = Vector2(13, 1)
 
 [node name="table3" parent="." instance=ExtResource("5_4i814")]
-position = Vector2(804, -52)
+position = Vector2(804, -56)
 
 [node name="Wall4" parent="." instance=ExtResource("4_4i814")]
 position = Vector2(493, -131)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://nd0nogi4foc1"]
+
+[ext_resource type="Script" uid="uid://b7j2hojgr1ue2" path="res://objects/grabbableObject.gd" id="1_e34bi"]
+
+[node name="grabbableObject" type="StaticBody2D" groups=["grabbable objects"]]
+script = ExtResource("1_e34bi")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

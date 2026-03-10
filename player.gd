@@ -35,34 +35,33 @@ func get_input(delta):
 	if left:
 		velocity.x -= run_speed
 	
+	if run: 
+		velocity.x *= 1.1
 	# weirdly, holding duck messes with your ability to jump and move in the air.
 	# its somethign with accepting inputs rather than being a code issue. 
 	
 	if duck:
 		if velocity.y > 0:
 			velocity.y *= 1.1
-
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		# problems with displaying outline:
-		# for some reason, it makes grab not grab
-		# it does not leave after it changes to that outline; there is not a way to tell if the player has left.
-		# perhaps grab the name of the collider, and then check next collision if thats in the list
-		if collision.get_collider() != null:
-			if collision.get_collider().has_method("show_hovered"):
-				collision.get_collider().show_hovered()
+	var item_hovered = false
+	
+	for scene in get_tree().get_nodes_in_group("grabbable objects"):
+		var distance_difference = (scene.position.x - self.position.x)
+		var distance_differencey = (scene.position.y - self.position.y)
+		if (distance_difference <= 75 and distance_difference >= 0) or (distance_difference <= 0 and distance_difference >= -75):
+			if distance_differencey <= 100 and distance_differencey >= -3:
+				scene.show_hovered()
+				item_hovered = true
+				
+				if grab:
+					scene.grab()
 					
-			if grab:
-				if collision.get_collider().has_method("grab"):
-					collision.get_collider().grab()
-					
-				else:
-					if PlayerState.inventory != [] and PlayerState.placing_item == false:
-						GameManager.blueprint_item()
-			if inventory:
-				GameManager.show_inventory()
+	if grab and item_hovered == false:
+		if PlayerState.inventory != [] and PlayerState.placing_item == false:
+			GameManager.blueprint_item()
 
-
+	if inventory:
+		GameManager.show_inventory()
 
 func do_animations():
 	if velocity == Vector2(0,0):
@@ -103,5 +102,7 @@ func _process(delta: float) -> void:
 	get_input(delta)
 	do_animations()
 	move_and_slide()
+
+
 
 # this needs to be changed to detect only ground, but works for now. 

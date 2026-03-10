@@ -9,20 +9,48 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func load_inventory():
-	if shown == false:
-		var scene = preload("res://grabbableObject.tscn")
+	if shown == true:
+		for item in items:
+			if item != null:
+				item.queue_free()
+		items = []
+		
+		var scene = preload("res://objects/grabbableObject.tscn")
 		var i = 0
+		for item_name in PlayerState.inventory:
+			if item_name == null:
+				PlayerState.inventory.remove_at(i)
+		i = 0
+		
 		for item_name in PlayerState.inventory:
 			match item_name:
 				"chair":
-					scene = preload("res://chair.tscn")
+					scene = preload("res://objects/chair/chair.tscn")
 				"table":
-					scene = preload("res://table.tscn")
+					scene = preload("res://objects/table/table.tscn")
 				"filing cabinet":
 					pass
+			var item = scene.instantiate()
+			item.position = Vector2(1110 - (int((i/10))*10), 40 + (i * 100))
+			add_child(item)
+			items.append(item)
+			i += 1
+		
+
+func load_inventory():
+	if shown == false:
+		var scene = preload("res://objects/grabbableObject.tscn")
+		var i = 0
+		
+		for item_name in PlayerState.inventory:
+			match item_name:
+				"chair":
+					scene = preload("res://objects/chair/chair.tscn")
+				"table":
+					scene = preload("res://objects/table/table.tscn")
+				"filing cabinet":
+					pass
+					
 			var item = scene.instantiate()
 			item.position = Vector2(1110 - (int((i/10))*10), 40 + (i * 100))
 			add_child(item)
@@ -32,7 +60,8 @@ func load_inventory():
 			
 	else:
 		for item in items:
-			item.queue_free()
+			if item != null:
+				item.queue_free()
 		items = []
 		shown = false
 		
