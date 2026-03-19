@@ -5,13 +5,12 @@ var touching_ground = false
 @export var run_speed = 350
 @export var jump_speed = -1000
 @export var gravity = 2500
+var coyote = 10
 
 var time = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	run_speed = 350
-	jump_speed = -1000
-	gravity = 2500
+	pass
 
 func get_input(delta):
 	velocity.x = 0
@@ -25,8 +24,15 @@ func get_input(delta):
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	if is_on_floor() and jump:
+		PlayerState.off_floor_time += delta
+	
+	if is_on_floor():
+		PlayerState.off_floor_time = 0
+		
+	if PlayerState.off_floor_time < delta * coyote and jump:
+		velocity.y += jump_speed * Input.get_action_strength("jump")
+		
+	elif "Double Jump" in PlayerState.inventory:
 		velocity.y = jump_speed
 
 	if right:
@@ -53,7 +59,7 @@ func get_input(delta):
 				scene.show_hovered()
 				item_hovered = true
 				
-				if grab:
+				if grab and PlayerState.placing_item == false:
 					scene.grab()
 					
 	if grab and item_hovered == false:
@@ -102,6 +108,7 @@ func _process(delta: float) -> void:
 	get_input(delta)
 	do_animations()
 	move_and_slide()
+	PlayerState.position = position
 
 
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8wysytow6vba"]
+
+[ext_resource type="PackedScene" uid="uid://2po386ounyov" path="res://objects/adjustableObject.tscn" id="1_8x1mf"]
+[ext_resource type="Texture2D" uid="uid://b7rsauoi76xnb" path="res://assets/grabbable_objects/filing cabinet.png" id="2_2uch4"]
+[ext_resource type="Texture2D" uid="uid://ca4re41gytc32" path="res://assets/grabbable_objects/filing cabinet hovered.png" id="3_a0gm2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_87mig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2uch4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a0gm2")
+}],
+"loop": true,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[node name="filing_cabinet" instance=ExtResource("1_8x1mf")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_87mig")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://cckqnb1egnfti"]
+
+[ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="1_j8bo8"]
+[ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="2_1jdk1"]
+[ext_resource type="PackedScene" uid="uid://djw8diwd8haen" path="res://objects/table/table.tscn" id="3_6p2dc"]
+[ext_resource type="PackedScene" uid="uid://cuhf4tr0ofx57" path="res://level_checkpoint.tscn" id="4_fmu3g"]
+
+[node name="Level 3" type="Node2D"]
+
+[node name="Floor5" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(0, -675)
+
+[node name="Floor39" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(256, -675)
+
+[node name="Floor40" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(384, -675)
+
+[node name="Floor41" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(512, -675)
+
+[node name="Floor6" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(641, -675)
+
+[node name="Floor42" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(769, -675)
+
+[node name="Floor43" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(897, -675)
+
+[node name="Floor44" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(1025, -675)
+
+[node name="Wall11" parent="." instance=ExtResource("2_1jdk1")]
+position = Vector2(18, -995)
+scale = Vector2(1, 10)
+
+[node name="Wall13" parent="." instance=ExtResource("2_1jdk1")]
+position = Vector2(18, -1635)
+scale = Vector2(1, 10)
+
+[node name="Wall12" parent="." instance=ExtResource("2_1jdk1")]
+position = Vector2(1145, -978)
+scale = Vector2(1, 10)
+
+[node name="Wall14" parent="." instance=ExtResource("2_1jdk1")]
+position = Vector2(1145, -1611)
+scale = Vector2(1, 10)
+
+[node name="table" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(274, -753)
+
+[node name="table4" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(442, -729)
+
+[node name="table5" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(567, -713)
+
+[node name="table6" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(687, -724)
+
+[node name="table7" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(835, -732)
+
+[node name="table8" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(726, -800)
+
+[node name="table9" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(911, -783)
+
+[node name="table10" parent="." instance=ExtResource("3_6p2dc")]
+position = Vector2(486, -772)
+
+[node name="Level Checkpoint2" parent="." instance=ExtResource("4_fmu3g")]
+position = Vector2(128, -662)
+scale = Vector2(6, 0.01)
+
+[node name="Level Checkpoint3" parent="." instance=ExtResource("4_fmu3g")]
+position = Vector2(208.32312, -1342.3243)
+scale = Vector2(100, 0.01)

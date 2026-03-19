@@ -23,13 +23,7 @@ func _process(delta: float) -> void:
 		i = 0
 		
 		for item_name in PlayerState.inventory:
-			match item_name:
-				"chair":
-					scene = preload("res://objects/chair/chair.tscn")
-				"table":
-					scene = preload("res://objects/table/table.tscn")
-				"filing cabinet":
-					pass
+			scene = PlayerState.get_inventory_item_name(item_name)
 			var item = scene.instantiate()
 			item.position = Vector2(1110 - (int((i/10))*10), 40 + (i * 100))
 			add_child(item)

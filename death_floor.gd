@@ -1,6 +1,6 @@
 extends Area2D
 
-var times_passed = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,10 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and body.velocity.y < 0:
-		GameManager.level_up()
-		times_passed += 1
-		
-	elif body.name == "Player" and body.velocity.y > 0:
-		GameManager.level_down()
-		times_passed += 1
+	if body.name == "Player":
+		body.position = $"Respawn Anchor".position

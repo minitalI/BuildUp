@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://itc1rvfoy4g5"]
+[gd_scene load_steps=3 format=3 uid="uid://itc1rvfoy4g5"]
+
+[ext_resource type="Texture2D" uid="uid://c3x1rg4iy4u3w" path="res://assets/environment/floor.png" id="1_oj3tl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh6kn"]
-size = Vector2(22, 22)
+size = Vector2(128, 32)
 
 [node name="Floor" type="StaticBody2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -11.0
-offset_top = -11.0
-offset_right = 11.0
-offset_bottom = 11.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oj3tl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_oh6kn")

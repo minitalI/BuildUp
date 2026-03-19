@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2tlxrbviu2bw"]
+
+[ext_resource type="Script" uid="uid://bhxexluff5c4w" path="res://death_floor.gd" id="1_8nrg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nrg7"]
+
+[node name="death floor" type="Area2D"]
+script = ExtResource("1_8nrg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8nrg7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

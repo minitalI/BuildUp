@@ -13,21 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ak2if")
 
-[node name="Label" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 337.0
-offset_top = 186.0
-offset_right = 1506.0
-offset_bottom = 725.0
-text = "Past runs will appear here."
-
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 47.0
-offset_right = 218.0
-offset_bottom = 88.0
+offset_left = 517.0
+offset_top = 295.0
+offset_right = 690.0
+offset_bottom = 336.0
 text = "Play Game            "
 icon = SubResource("ViewportTexture_05l2w")
 

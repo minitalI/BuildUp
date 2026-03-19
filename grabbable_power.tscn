@@ -1,4 +1,7 @@
-extends StaticBody2D
+[gd_scene load_steps=2 format=3 uid="uid://cwj0st3nybhr3"]
+
+[sub_resource type="GDScript" id="GDScript_owoo7"]
+script/source = "extends StaticBody2D
 var time_since_hovered = 0
 var grabbed = false
 
@@ -12,14 +15,14 @@ func _process(delta: float) -> void:
 	if time_since_hovered > (delta * 2):
 		if self != null:
 			if $AnimatedSprite2D != null:
-				$AnimatedSprite2D.animation = "default"
+				$AnimatedSprite2D.animation = \"default\"
 		# collisions are only detected when you are actively moving at the object, not good. 
 	time_since_hovered += delta
 
 func grab():
 	if grabbed != true:
 		if GameManager.objects_left > 0:
-			print("aur naur yew grabbed mey!!")
+			print(\"aur naur yew grabbed mey!!\")
 			# okay, how do we make the inventory work
 			# currently, it is a variable in playerInfo
 			# this makes sense.
@@ -31,13 +34,16 @@ func grab():
 			PlayerState.inventory.append(self.name)
 			grabbed = true
 			GameManager.objects_grabbed += 1
-			GameManager.object_limits[GameManager.y_modifier] -= 1
 			GameManager.objects_left -= 1
 			self.queue_free()
 
 func show_hovered():
 	time_since_hovered = 0
-	$AnimatedSprite2D.animation = "hovered"
+	$AnimatedSprite2D.animation = \"hovered\"
 	$AnimatedSprite2D.play()
 # also, there should be multiple screens to the left and right.
 # like if you go all the way to the left, it pans and reveals the new area. 
+"
+
+[node name="grabbablePower" type="StaticBody2D"]
+script = SubResource("GDScript_owoo7")

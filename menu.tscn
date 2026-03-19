@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj7m3egdlmrkr"]
+
+[ext_resource type="Texture2D" uid="uid://bc1dwet1f82en" path="res://menu_background.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://cygckw3oaaj3b" path="res://menu.gd" id="1_ouk20"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1158.0
+offset_bottom = 799.0
+texture = ExtResource("1_lti8b")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 567.0
+offset_right = 1116.0
+offset_bottom = 620.0
+text = "Reset Level"
+
+[node name="Reset Level" type="Button" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 83.0
+offset_right = 179.0
+offset_bottom = 136.0
+text = "Reset Level"
+
+[node name="Gameplay" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 14.0
+offset_right = 123.0
+offset_bottom = 49.0
+text = "Gameplay"
+
+[node name="Audio" type="Button" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 14.0
+offset_right = 203.0
+offset_bottom = 49.0
+text = "Audio"
+
+[node name="Controls" type="Button" parent="."]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 14.0
+offset_right = 305.0
+offset_bottom = 49.0
+text = "Controls"
+
+[node name="Levels" type="Button" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 172.0
+offset_right = 177.0
+offset_bottom = 225.0
+text = "Levels"
+
+[node name="Level1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 245.0
+offset_right = 98.0
+offset_bottom = 300.0
+text = "Level 1"
+
+[node name="Level2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 245.0
+offset_right = 177.0
+offset_bottom = 300.0
+text = "Level 2"
+
+[node name="Level3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 245.0
+offset_right = 256.0
+offset_bottom = 300.0
+text = "Level 3"
+
+[connection signal="pressed" from="Reset Level" to="." method="_on_reset_level_pressed"]
+[connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]

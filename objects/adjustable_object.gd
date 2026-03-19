@@ -26,7 +26,8 @@ func _process(delta: float) -> void:
 		self.queue_free()
 	
 func adjust_position():
-	position = Vector2(get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y - (get_viewport().size.y * (GameManager.level - 1)))
+		
+	position = Vector2(get_viewport().get_mouse_position().x - (get_viewport().size.x * (GameManager.x_modifier)), get_viewport().get_mouse_position().y - (get_viewport().size.y * (GameManager.y_modifier)))
 		
 	if Input.is_action_just_pressed("grab"):
 		position_adjusted = true
@@ -38,6 +39,10 @@ func adjust_position():
 	if Input.is_action_just_pressed("next"):
 		PlayerState.set_inventory_location(PlayerState.inventory_location + 1)
 		GameManager.blueprint_item()
+		self.queue_free()
+		
+	if Input.is_action_just_pressed("instant place"):
+		GameManager.place_item(self.position, self.rotation)
 		self.queue_free()
 		
 func adjust_rotation():
