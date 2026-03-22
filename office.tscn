@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bupikhcgmuotp"]
 
 [ext_resource type="Script" uid="uid://dueufo6ke7hh4" path="res://office.gd" id="1_43ocd"]
-[ext_resource type="Texture2D" uid="uid://dqsqf4gaop3sl" path="res://assets/environment/background_full_length_windows.png" id="2_3xqf3"]
 [ext_resource type="PackedScene" uid="uid://coskfjqvw3k6c" path="res://gui.tscn" id="2_4i814"]
 [ext_resource type="PackedScene" uid="uid://bmjkfl2rs85i1" path="res://player.tscn" id="2_hsito"]
+[ext_resource type="Texture2D" uid="uid://cublkiv0sw77f" path="res://assets/environment/background_windows_full_length.png" id="2_wruqr"]
 [ext_resource type="PackedScene" uid="uid://brju0c3l3jqq1" path="res://level_1.tscn" id="4_3xqf3"]
 [ext_resource type="PackedScene" uid="uid://cckqnb1egnfti" path="res://level_3.tscn" id="5_lcwox"]
 [ext_resource type="PackedScene" uid="uid://bhwis8venoghg" path="res://level_2.tscn" id="5_wruqr"]
@@ -25,7 +25,16 @@ offset_right = 1152.0
 offset_bottom = 622.0
 focus_next = NodePath("../GUI")
 focus_previous = NodePath("..")
-texture = ExtResource("2_3xqf3")
+texture = ExtResource("2_wruqr")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1152.0
+offset_top = -7010.0
+offset_bottom = 622.0
+focus_next = NodePath("../GUI")
+focus_previous = NodePath("..")
+texture = ExtResource("2_wruqr")
 
 [node name="Level 1" parent="." instance=ExtResource("4_3xqf3")]
 

@@ -28,12 +28,9 @@ func _process(delta: float) -> void:
 	if $Player.position.x > get_viewport().size.x:
 		$Camera2D.position = Vector2(get_viewport().size.x + (get_viewport().size.x / 2),  get_viewport().size.y / 2 + (0 - get_viewport().size.y * GameManager.y_modifier))
 		$GUI.position = Vector2(get_viewport().size.x, -(get_viewport().size.y * GameManager.y_modifier))
+
 # things left to do:
-# powers
-# levels -- theres 2? 
-# music
-# sound effects
-# more items
+
 
 # bugs to fix:
 # adding ctrl to what you are holding does not make it super rotate, you have to stop your rotation and then start again
@@ -42,7 +39,5 @@ func _process(delta: float) -> void:
 
 # polish to add:
 # make the walls in the middle of the office like doors, floor to cieling, with a gap for a vent, or something of the sort
-# make a button to place items instantly
 # make in between animations
-# ability to reset the room
 # standardize the height of rooms, where the floor goes down into each room, how far the walls are, ect.

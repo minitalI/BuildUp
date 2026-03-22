@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmjkfl2rs85i1"]
+[gd_scene load_steps=13 format=3 uid="uid://dn8fyv4mql3as"]
 
 [ext_resource type="Script" uid="uid://bgjulphoi1b58" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bd2sxufmqe25i" path="res://assets/mc/mc_crouch_64.png" id="2_n7ghd"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dajvwogl2w3h4"
-path="res://.godot/imported/background_walls_windows.png-4c1f140e96b2dffbe94b35a502ab1316.ctex"
+uid="uid://cublkiv0sw77f"
+path="res://.godot/imported/background_windows_full_length.png-1ba6293a68008fe9c192e2a9322a11ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environment/background_walls_windows.png"
-dest_files=["res://.godot/imported/background_walls_windows.png-4c1f140e96b2dffbe94b35a502ab1316.ctex"]
+source_file="res://assets/environment/background_windows_full_length.png"
+dest_files=["res://.godot/imported/background_windows_full_length.png-1ba6293a68008fe9c192e2a9322a11ef.ctex"]
 
 [params]
 

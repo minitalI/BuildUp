@@ -8,25 +8,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	z_index = 2
 
 func _on_show_menu():
 	set_deferred("visible", not visible)
+	GameManager.in_menu = not GameManager.in_menu
 	
 
 
 func _on_reset_level_pressed() -> void:
 	# now that i think of this probably this should be done in game manager
-	var objects = get_tree().get_nodes_in_group("grabbable objects")
-	for object in objects:
-		object.queue_free()
-	
-	var i = 0
-	for object in GameManager.static_object_limits:
-		GameManager.object_limits[i] = object
-		i += 1
-	get_tree().reload_current_scene()
-	GameManager.set_object_limit()
+	GameManager.in_menu = false
+	GameManager.reset_level()
 	# okay well we want to get rid of the placed objects and then also reset object limits
 	# so we may have to do this manually
 	# groups! we can use groups to free each grabbable object, then reload. 

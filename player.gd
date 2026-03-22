@@ -43,8 +43,6 @@ func get_input(delta):
 	
 	if run: 
 		velocity.x *= 1.1
-	# weirdly, holding duck messes with your ability to jump and move in the air.
-	# its somethign with accepting inputs rather than being a code issue. 
 	
 	if duck:
 		if velocity.y > 0:
@@ -55,13 +53,19 @@ func get_input(delta):
 		var distance_difference = (scene.position.x - self.position.x)
 		var distance_differencey = (scene.position.y - self.position.y)
 		if (distance_difference <= 75 and distance_difference >= 0) or (distance_difference <= 0 and distance_difference >= -75):
-			if distance_differencey <= 100 and distance_differencey >= -3:
+			if distance_differencey <= 100 and distance_differencey >= -20:
 				scene.show_hovered()
 				item_hovered = true
 				
-				if grab and PlayerState.placing_item == false:
+				if grab and PlayerState.placing_item == false and GameManager.in_menu == false:
 					scene.grab()
 					
+	if is_on_wall_only():
+					if jump:
+						velocity = Vector2(run_speed*10, jump_speed / 2)
+						$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+						
+						
 	if grab and item_hovered == false:
 		if PlayerState.inventory != [] and PlayerState.placing_item == false:
 			GameManager.blueprint_item()
@@ -104,12 +108,9 @@ func do_animations():
 
 func _process(delta: float) -> void:
 	time += delta
-	# check if not touching ground, if so add like 10 to velocity.y
 	get_input(delta)
 	do_animations()
 	move_and_slide()
 	PlayerState.position = position
-
-
-
-# this needs to be changed to detect only ground, but works for now. 
+	
+	# check collision
