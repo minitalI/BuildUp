@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://c51an00lm2m7r"]
+
+[ext_resource type="Texture2D" uid="uid://s5fr0wljoari" path="res://assets/Title screen alpha.png" id="1_hgi8f"]
+[ext_resource type="Script" uid="uid://biubrbsfgek7p" path="res://win.gd" id="1_tmki8"]
+[ext_resource type="Theme" uid="uid://cqqlirf1bgvx0" path="res://text_theme.tres" id="2_tmki8"]
+[ext_resource type="AudioStream" uid="uid://wtlynf5yy3oy" path="res://assets/audio/music/leap of faith.mp3" id="4_yblwc"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmki8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 98.0
+offset_right = 1152.0
+offset_bottom = 738.0
+texture = ExtResource("1_hgi8f")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -399.0
+offset_right = 1152.0
+offset_bottom = 241.0
+texture = ExtResource("1_hgi8f")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 40.0
+offset_right = 942.0
+offset_bottom = 193.0
+theme = ExtResource("2_tmki8")
+theme_override_font_sizes/font_size = 200
+text = "YOU DID IT!"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 537.0
+offset_right = 937.0
+offset_bottom = 671.0
+theme = ExtResource("2_tmki8")
+theme_override_font_sizes/font_size = 100
+text = "THANKS FOR PLAYING :P"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -828.0
+offset_top = 211.0
+offset_right = -65.0
+offset_bottom = 364.0
+theme = ExtResource("2_tmki8")
+theme_override_font_sizes/font_size = 200
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yblwc")
+autoplay = true

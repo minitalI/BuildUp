@@ -1,17 +1,13 @@
 extends Control
 
+var area_type = "Main"
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	match GameManager.level:
-		1:
-			$Player.position = $"Level 1/Respawn Anchor".position
-		2:
-			pass
-		3:
-			pass
-		4:
-			$Player.position = $"level 4/death floor/Respawn Anchor".position
+	AudioManager.play_song(area_type)
+	var scene = preload("res://player.tscn")
+	var player = scene.instantiate()
+	add_child(player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,7 +30,6 @@ func _process(delta: float) -> void:
 
 # bugs to fix:
 # adding ctrl to what you are holding does not make it super rotate, you have to stop your rotation and then start again
-# currently no way to tell apart objects that have been placed already and ones that have just been grabbed, making the counter wrong.
 # if the player lands somewhere where they are standing in the level checkpoint, they will level up
 
 # polish to add:

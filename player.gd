@@ -6,11 +6,13 @@ var touching_ground = false
 @export var jump_speed = -1000
 @export var gravity = 2500
 var coyote = 10
+var old_speed_y: int
 
 var time = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	var spawnpoints = get_tree().get_nodes_in_group("respawn anchors")
+	position = spawnpoints[GameManager.tplevel - 1].position
 
 func get_input(delta):
 	velocity.x = 0
@@ -30,7 +32,7 @@ func get_input(delta):
 		PlayerState.off_floor_time = 0
 		
 	if PlayerState.off_floor_time < delta * coyote and jump:
-		velocity.y += jump_speed * Input.get_action_strength("jump")
+		velocity.y = jump_speed * Input.get_action_strength("jump")
 		
 	elif "Double Jump" in PlayerState.inventory:
 		velocity.y = jump_speed
@@ -41,37 +43,49 @@ func get_input(delta):
 	if left:
 		velocity.x -= run_speed
 	
-	if run: 
-		velocity.x *= 1.1
+	#if run: 
+		#velocity.x *= 2
 	
-	if duck:
-		if velocity.y > 0:
-			velocity.y *= 1.1
+	#if duck:
+		#if velocity.y > 0:
+			#velocity.y *= 1.1
+			
 	var item_hovered = false
 	
 	for scene in get_tree().get_nodes_in_group("grabbable objects"):
-		var distance_difference = (scene.position.x - self.position.x)
-		var distance_differencey = (scene.position.y - self.position.y)
-		if (distance_difference <= 75 and distance_difference >= 0) or (distance_difference <= 0 and distance_difference >= -75):
-			if distance_differencey <= 100 and distance_differencey >= -20:
-				scene.show_hovered()
-				item_hovered = true
-				
-				if grab and PlayerState.placing_item == false and GameManager.in_menu == false:
-					scene.grab()
+		if GameManager.objects_left > 0:
+			var distance_difference = (scene.position.x - self.position.x)
+			var distance_differencey = (scene.position.y - self.position.y)
+			if (distance_difference <= 75 and distance_difference >= 0) or (distance_difference <= 0 and distance_difference >= -75):
+				if distance_differencey <= 100 and distance_differencey >= -30:
+					scene.show_hovered()
+					item_hovered = true
 					
-	if is_on_wall_only():
-					if jump:
-						velocity = Vector2(run_speed*10, jump_speed / 2)
-						$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+					if grab and PlayerState.placing_item == false and GameManager.in_menu == false:
+						scene.grab()
+						AudioManager.play_sfx("Grab")
 						
-						
+		#if is_on_wall_only():
+		#				if jump:
+		#					if left:
+		#						velocity = Vector2(run_speed*20, jump_speed / 2)
+		#					elif right: 
+		#						velocity = Vector2(-run_speed*20, jump_speed / 2)
+		#					else:
+		#						velocity = Vector2(run_speed*10, jump_speed / 2)
+		#					$AnimatedSprite2D.flip_h = not $AnimatedSprite2D.flip_h
+
 	if grab and item_hovered == false:
 		if PlayerState.inventory != [] and PlayerState.placing_item == false:
 			GameManager.blueprint_item()
 
 	if inventory:
 		GameManager.show_inventory()
+	
+	if old_speed_y > 0 and velocity.y == 0:
+		AudioManager.play_sfx("Fall")
+		
+	old_speed_y = velocity.y
 
 func do_animations():
 	if velocity == Vector2(0,0):
@@ -95,8 +109,8 @@ func do_animations():
 	elif velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 	
-	elif Input.is_action_pressed("duck"):
-		$AnimatedSprite2D.animation = "duck"
+	#elif Input.is_action_pressed("duck"):
+		#$AnimatedSprite2D.animation = "duck"
 			
 	elif Input.is_action_pressed("grab"):
 		$AnimatedSprite2D.animation = "grab"
@@ -108,9 +122,30 @@ func do_animations():
 
 func _process(delta: float) -> void:
 	time += delta
-	get_input(delta)
-	do_animations()
-	move_and_slide()
-	PlayerState.position = position
+	if not GameManager.in_menu:
+		get_input(delta)
+		do_animations()
+		move_and_slide()
+		PlayerState.position = position
+		AudioManager.position = position
+	else:
+		$AnimatedSprite2D.pause()
 	
+	# notes
+	# make aduio manager not a node 2d and move it around
+	# 
 	# check collision
+	
+	
+	# sounds:
+	# on click:
+	# maybe a snap? or a click pen click
+	
+	# on fall
+	# tapping on wood or some such
+	
+	# placing / grabbing item
+	# cloth rustling
+	# reverse for closing menu
+	
+	# 

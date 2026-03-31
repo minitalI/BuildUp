@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cckqnb1egnfti"]
+[gd_scene load_steps=7 format=3 uid="uid://cckqnb1egnfti"]
 
+[ext_resource type="PackedScene" uid="uid://d2ktts2a1wqf2" path="res://respawn_anchor.tscn" id="1_1jdk1"]
 [ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="1_j8bo8"]
 [ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="2_1jdk1"]
 [ext_resource type="PackedScene" uid="uid://djw8diwd8haen" path="res://objects/table/table.tscn" id="3_6p2dc"]
 [ext_resource type="PackedScene" uid="uid://cuhf4tr0ofx57" path="res://level_checkpoint.tscn" id="4_fmu3g"]
+[ext_resource type="PackedScene" uid="uid://c4em74yyucn8d" path="res://objects/chair/chair.tscn" id="5_6p2dc"]
 
 [node name="Level 3" type="Node2D"]
+
+[node name="Respawn Anchor" parent="." instance=ExtResource("1_1jdk1")]
+position = Vector2(38, -740)
 
 [node name="Floor5" parent="." instance=ExtResource("1_j8bo8")]
 position = Vector2(0, -675)
@@ -20,16 +25,19 @@ position = Vector2(384, -675)
 position = Vector2(512, -675)
 
 [node name="Floor6" parent="." instance=ExtResource("1_j8bo8")]
-position = Vector2(641, -675)
+position = Vector2(640, -675)
 
 [node name="Floor42" parent="." instance=ExtResource("1_j8bo8")]
-position = Vector2(769, -675)
+position = Vector2(768, -675)
 
 [node name="Floor43" parent="." instance=ExtResource("1_j8bo8")]
-position = Vector2(897, -675)
+position = Vector2(896, -675)
 
 [node name="Floor44" parent="." instance=ExtResource("1_j8bo8")]
-position = Vector2(1025, -675)
+position = Vector2(1024, -675)
+
+[node name="Floor45" parent="." instance=ExtResource("1_j8bo8")]
+position = Vector2(1152, -675)
 
 [node name="Wall11" parent="." instance=ExtResource("2_1jdk1")]
 position = Vector2(18, -995)
@@ -48,33 +56,37 @@ position = Vector2(1145, -1611)
 scale = Vector2(1, 10)
 
 [node name="table" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(274, -753)
+position = Vector2(385, -707)
 
 [node name="table4" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(442, -729)
+position = Vector2(506, -707)
 
 [node name="table5" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(567, -713)
+position = Vector2(568, -707)
 
 [node name="table6" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(687, -724)
+position = Vector2(625, -707)
 
 [node name="table7" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(835, -732)
+position = Vector2(740, -707)
 
 [node name="table8" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(726, -800)
+position = Vector2(685, -707)
 
 [node name="table9" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(911, -783)
+position = Vector2(799, -707)
 
 [node name="table10" parent="." instance=ExtResource("3_6p2dc")]
-position = Vector2(486, -772)
+position = Vector2(447, -707)
+
+[node name="chair" parent="." instance=ExtResource("5_6p2dc")]
+position = Vector2(310, -707)
+constant_linear_velocity = Vector2(0, -0.965)
+
+[node name="chair2" parent="." instance=ExtResource("5_6p2dc")]
+position = Vector2(875, -707)
+scale = Vector2(-1, 1)
 
 [node name="Level Checkpoint2" parent="." instance=ExtResource("4_fmu3g")]
 position = Vector2(128, -662)
 scale = Vector2(6, 0.01)
-
-[node name="Level Checkpoint3" parent="." instance=ExtResource("4_fmu3g")]
-position = Vector2(208.32312, -1342.3243)
-scale = Vector2(100, 0.01)

@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$"Objects Left".text = "Objects Left: " + str(GameManager.objects_left)
+	$"Objects Left".text = "OBJECTS LEFT: " + str(GameManager.objects_left)

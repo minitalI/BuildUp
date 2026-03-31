@@ -52,11 +52,11 @@ func get_inventory_item_name(item_name):
 	var scene = preload("res://objects/grabbableObject.tscn")
 	match item_name.rstrip("0123456789"):
 		"chair":
-			scene = preload("res://objects/chair/chair.tscn")
+			scene = preload("res://objects/chair/ethereal_chair.tscn")
 		"table":
-			scene = preload("res://objects/table/Table.tscn")
+			scene = preload("res://objects/table/ethereal_table.tscn")
 		"FilingCabinet":
-			scene = preload("res://objects/filing_cabinet/FilingCabinet.tscn")
+			scene = preload("res://objects/filing_cabinet/ethereal_filingCabinet.tscn")
 	return scene
 			
 func remove_item_from_inventory():

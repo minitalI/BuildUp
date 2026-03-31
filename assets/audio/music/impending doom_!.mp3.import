@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1ancih1nbuhe"
+path="res://.godot/imported/impending doom_!.mp3-76a8e4abff88642decae5d1cc3cd7005.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/impending doom_!.mp3"
+dest_files=["res://.godot/imported/impending doom_!.mp3-76a8e4abff88642decae5d1cc3cd7005.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

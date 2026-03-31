@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wtlynf5yy3oy"
+path="res://.godot/imported/leap of faith.mp3-ed0a13a4dd01d822188f84945f72706a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/leap of faith.mp3"
+dest_files=["res://.godot/imported/leap of faith.mp3-ed0a13a4dd01d822188f84945f72706a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

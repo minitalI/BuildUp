@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cq8vfrg281cln"
+path="res://.godot/imported/menu-chan's animosity.mp3-6ed5a61f551b3a36f5bbacad69dee25f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/menu-chan's animosity.mp3"
+dest_files=["res://.godot/imported/menu-chan's animosity.mp3-6ed5a61f551b3a36f5bbacad69dee25f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

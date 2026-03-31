@@ -33,7 +33,7 @@ func adjust_position():
 		position_adjusted = true
 	
 	if Input.is_action_just_pressed("exit"):
-		PlayerState.inventory.append(self.name)
+		PlayerState.placing_item = false
 		self.queue_free()
 	
 	if Input.is_action_just_pressed("next"):

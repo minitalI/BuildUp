@@ -9,14 +9,6 @@
 
 [node name="level 4" type="Node2D"]
 
-[node name="Wall2" parent="." instance=ExtResource("2_xcfcc")]
-position = Vector2(-1117, -2251)
-scale = Vector2(1, 10)
-
-[node name="Wall3" parent="." instance=ExtResource("2_xcfcc")]
-position = Vector2(1151, -2251)
-scale = Vector2(1, 10)
-
 [node name="death floor" parent="." instance=ExtResource("1_l45re")]
 position = Vector2(-573, -1931)
 scale = Vector2(50, 0.01)
@@ -103,13 +95,21 @@ position = Vector2(-320, -2602)
 position = Vector2(-64, -2602)
 
 [node name="Floor18" parent="." instance=ExtResource("1_na6m6")]
-position = Vector2(-1088, -1963)
+position = Vector2(-1084, -1962)
 
 [node name="Floor27" parent="." instance=ExtResource("1_na6m6")]
-position = Vector2(-1088, -2181)
+position = Vector2(-1084, -2181)
 
 [node name="Floor28" parent="." instance=ExtResource("1_na6m6")]
-position = Vector2(-1088, -2369)
+position = Vector2(-1084, -2369)
+
+[node name="Wall2" parent="." instance=ExtResource("2_xcfcc")]
+position = Vector2(-1117, -2265)
+scale = Vector2(1, 10.5)
+
+[node name="Wall3" parent="." instance=ExtResource("2_xcfcc")]
+position = Vector2(1151, -2251)
+scale = Vector2(1, 10)
 
 [node name="Level Checkpoint" parent="." instance=ExtResource("2_48hld")]
 position = Vector2(194, -1949)

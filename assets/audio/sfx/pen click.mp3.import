@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk5lc2rv023gm"
+path="res://.godot/imported/pen click.mp3-b0b6e6953ff0b02f7e84b812e2f0f203.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/pen click.mp3"
+dest_files=["res://.godot/imported/pen click.mp3-b0b6e6953ff0b02f7e84b812e2f0f203.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

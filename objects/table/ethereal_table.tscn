@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5mue0vb3qiek"]
+
+[ext_resource type="PackedScene" uid="uid://nd0nogi4foc1" path="res://objects/grabbableObject.tscn" id="1_2k6dj"]
+[ext_resource type="Texture2D" uid="uid://e3bmc3le6j8i" path="res://assets/grabbable_objects/table.png" id="2_i4bil"]
+[ext_resource type="Texture2D" uid="uid://8qigbxf1dn1l" path="res://assets/grabbable_objects/table hovered.png" id="3_sn6gw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jry6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i4bil")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sn6gw")
+}],
+"loop": true,
+"name": &"hovered",
+"speed": 5.0
+}]
+
+[node name="table" instance=ExtResource("1_2k6dj")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_jry6c")

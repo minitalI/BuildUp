@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm2yq33ji7tln"]
+[gd_scene load_steps=3 format=3 uid="uid://dm2yq33ji7tln"]
 
 [ext_resource type="Script" uid="uid://btl0f3uviakwo" path="res://inventory.gd" id="1_pohso"]
+[ext_resource type="Texture2D" uid="uid://bc1dwet1f82en" path="res://assets/menu_background.png" id="2_psafj"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -8,3 +9,9 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_pohso")
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1052, 281.5)
+scale = Vector2(0.29749995, 0.94625)
+texture = ExtResource("2_psafj")

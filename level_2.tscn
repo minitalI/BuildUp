@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhwis8venoghg"]
+[gd_scene load_steps=7 format=3 uid="uid://bhwis8venoghg"]
 
+[ext_resource type="PackedScene" uid="uid://d2ktts2a1wqf2" path="res://respawn_anchor.tscn" id="1_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="1_n7ypv"]
 [ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="2_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://c4em74yyucn8d" path="res://objects/chair/chair.tscn" id="3_7j8ne"]
@@ -7,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cuhf4tr0ofx57" path="res://level_checkpoint.tscn" id="5_ehv2h"]
 
 [node name="Level 2" type="Node2D"]
+
+[node name="Respawn Anchor" parent="." instance=ExtResource("1_0s5r2")]
+position = Vector2(66, -83)
 
 [node name="Floor26" parent="." instance=ExtResource("1_n7ypv")]
 position = Vector2(472, -27)
@@ -62,13 +66,14 @@ position = Vector2(32, -321)
 scale = Vector2(1, 10)
 
 [node name="chair3" parent="." instance=ExtResource("3_7j8ne")]
-position = Vector2(466, -60)
+position = Vector2(469, -59)
+scale = Vector2(-1, 1)
 
 [node name="table3" parent="." instance=ExtResource("4_7dov7")]
 position = Vector2(804, -59)
 
 [node name="Wall4" parent="." instance=ExtResource("2_0s5r2")]
-position = Vector2(533, -141)
+position = Vector2(533, -139)
 scale = Vector2(1, 3.5)
 
 [node name="Level Checkpoint" parent="." instance=ExtResource("5_ehv2h")]

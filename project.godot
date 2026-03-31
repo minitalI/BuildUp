@@ -15,11 +15,16 @@ run/main_scene="uid://iifynlwmnk8a"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://y3mliq3nsgd5"
+
 [autoload]
 
 PlayerState="*res://player_state.gd"
 SignalBus="*res://signal_bus.gd"
 GameManager="*res://game_manager.gd"
+AudioManager="*res://audio_manager.tscn"
 
 [display]
 
@@ -28,6 +33,11 @@ window/stretch/mode="viewport"
 [editor]
 
 movie_writer/movie_file="C:/Users/skitt/OneDrive/Documents/build-up/sprites_demo.avi"
+
+[global_group]
+
+"Alt music"=""
+"Normal music"=""
 
 [input]
 

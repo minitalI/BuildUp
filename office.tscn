@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://bupikhcgmuotp"]
 
 [ext_resource type="Script" uid="uid://dueufo6ke7hh4" path="res://office.gd" id="1_43ocd"]
-[ext_resource type="PackedScene" uid="uid://coskfjqvw3k6c" path="res://gui.tscn" id="2_4i814"]
-[ext_resource type="PackedScene" uid="uid://bmjkfl2rs85i1" path="res://player.tscn" id="2_hsito"]
+[ext_resource type="PackedScene" uid="uid://bo6hdak704eki" path="res://gui.tscn" id="2_4i814"]
 [ext_resource type="Texture2D" uid="uid://cublkiv0sw77f" path="res://assets/environment/background_windows_full_length.png" id="2_wruqr"]
 [ext_resource type="PackedScene" uid="uid://brju0c3l3jqq1" path="res://level_1.tscn" id="4_3xqf3"]
 [ext_resource type="PackedScene" uid="uid://cckqnb1egnfti" path="res://level_3.tscn" id="5_lcwox"]
 [ext_resource type="PackedScene" uid="uid://bhwis8venoghg" path="res://level_2.tscn" id="5_wruqr"]
 [ext_resource type="PackedScene" uid="uid://b0q6lo66tlill" path="res://level_4.tscn" id="6_3xqf3"]
+[ext_resource type="PackedScene" uid="uid://bnrsj7rkjhrnn" path="res://level_5.tscn" id="7_wruqr"]
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -22,6 +22,16 @@ script = ExtResource("1_43ocd")
 layout_mode = 0
 offset_top = -7010.0
 offset_right = 1152.0
+offset_bottom = 622.0
+focus_next = NodePath("../GUI")
+focus_previous = NodePath("..")
+texture = ExtResource("2_wruqr")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = -7010.0
+offset_right = 2304.0
 offset_bottom = 622.0
 focus_next = NodePath("../GUI")
 focus_previous = NodePath("..")
@@ -45,8 +55,7 @@ position = Vector2(3.0517578e-05, 7.6293945e-06)
 
 [node name="level 4" parent="." instance=ExtResource("6_3xqf3")]
 
-[node name="Player" parent="." instance=ExtResource("2_hsito")]
-position = Vector2(83, -2051)
+[node name="level 5" parent="." instance=ExtResource("7_wruqr")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(577, 324)

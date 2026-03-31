@@ -3,6 +3,7 @@ extends Node
 signal grab_item
 signal show_inventory
 signal show_menu
+signal buttons_appear
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

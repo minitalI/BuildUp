@@ -31,7 +31,7 @@ func grab():
 			PlayerState.inventory.append(self.name)
 			grabbed = true
 			GameManager.objects_grabbed += 1
-			GameManager.object_limits[GameManager.y_modifier] -= 1
+			GameManager.object_limits[GameManager.level - 1] -= 1
 			GameManager.objects_left -= 1
 			self.queue_free()
 
