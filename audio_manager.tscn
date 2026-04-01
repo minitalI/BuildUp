@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://ckadggnoilsut" path="res://assets/audio/music/up and up!.mp3" id="2_l2k84"]
 [ext_resource type="AudioStream" uid="uid://wtlynf5yy3oy" path="res://assets/audio/music/leap of faith.mp3" id="3_l55mp"]
 [ext_resource type="AudioStream" uid="uid://b1ancih1nbuhe" path="res://assets/audio/music/impending doom_!.mp3" id="4_v0gdi"]
-[ext_resource type="AudioStream" uid="uid://dsr2ui1dut8js" path="res://assets/audio/music/menu-chan's theme (is it love_).mp3" id="5_7fh0q"]
-[ext_resource type="AudioStream" uid="uid://cq8vfrg281cln" path="res://assets/audio/music/menu-chan's animosity.mp3" id="6_op7ad"]
+[ext_resource type="AudioStream" uid="uid://ddb0yyb5e1tfh" path="res://assets/audio/music/menu-chans theme.mp3" id="5_op7ad"]
+[ext_resource type="AudioStream" uid="uid://dc6uyj7ryj2hp" path="res://assets/audio/music/menu-chans animosity.mp3" id="6_wby2p"]
 [ext_resource type="AudioStream" uid="uid://dk5lc2rv023gm" path="res://assets/audio/sfx/pen click.mp3" id="7_l55mp"]
 [ext_resource type="AudioStream" uid="uid://dbb15qtc64aur" path="res://assets/audio/sfx/grab sound.mp3" id="9_7fh0q"]
 [ext_resource type="AudioStream" uid="uid://fryhl2dcfxs4" path="res://assets/audio/sfx/place sound.mp3" id="9_op7ad"]
@@ -30,12 +30,12 @@ panning_strength = 0.0
 bus = &"Music"
 
 [node name="Menu-chan\'s Theme (Is it Love?)" type="AudioStreamPlayer2D" parent="." groups=["Music", "Normal music"]]
-stream = ExtResource("5_7fh0q")
+stream = ExtResource("5_op7ad")
 panning_strength = 0.0
 bus = &"Music"
 
 [node name="Menu-chan\'s Animosity" type="AudioStreamPlayer2D" parent="." groups=["Alt music", "Music"]]
-stream = ExtResource("6_op7ad")
+stream = ExtResource("6_wby2p")
 panning_strength = 0.0
 bus = &"Music"
 

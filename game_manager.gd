@@ -30,7 +30,6 @@ func set_position_modifiers():
 		var viewport_size = get_viewport().size
 		x_modifier = floor(temp_pos.x / LEVEL_WIDTH)
 		y_modifier = abs(floor(temp_pos.y / LEVEL_HEIGHT))
-		print("fdsgihlou")
 		
 
 
@@ -88,7 +87,6 @@ func set_level():
 	else:
 		level = y_modifier + 1
 		
-
 func level_up():
 	set_object_limit()
 	objects_left = object_limits[level - 1]
