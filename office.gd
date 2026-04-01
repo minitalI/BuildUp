@@ -14,16 +14,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# hopefully this just works, cant test rn.
 	if $Player.position.x < 0:
-		$Camera2D.position = Vector2(-(get_viewport().size.x / 2), get_viewport().size.y / 2 + (0 - get_viewport().size.y * (GameManager.y_modifier)))
-		$GUI.position = Vector2(-get_viewport().size.x, -(get_viewport().size.y * (GameManager.y_modifier)))
+		$Camera2D.position = Vector2(-(get_viewport_rect().size.x / 2), get_viewport_rect().size.y / 2 + (0 - get_viewport_rect().size.y * (GameManager.y_modifier)))
+		$GUI.position = Vector2(-get_viewport_rect().size.x, -(get_viewport_rect().size.y * (GameManager.y_modifier)))
 		
 	if $Player.position.x > 0:
-		$Camera2D.position = Vector2(get_viewport().size.x / 2, get_viewport().size.y / 2 + (0 - get_viewport().size.y * ((GameManager.y_modifier) * 2)) / 2)
-		$GUI.position = Vector2(0, -(get_viewport().size.y * GameManager.y_modifier))
+		$Camera2D.position = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y / 2 + (0 - get_viewport_rect().size.y * ((GameManager.y_modifier) * 2)) / 2)
+		$GUI.position = Vector2(0, -(get_viewport_rect().size.y * GameManager.y_modifier))
 		
-	if $Player.position.x > get_viewport().size.x:
-		$Camera2D.position = Vector2(get_viewport().size.x + (get_viewport().size.x / 2),  get_viewport().size.y / 2 + (0 - get_viewport().size.y * GameManager.y_modifier))
-		$GUI.position = Vector2(get_viewport().size.x, -(get_viewport().size.y * GameManager.y_modifier))
+	if $Player.position.x > get_viewport_rect().size.x:
+		$Camera2D.position = Vector2(get_viewport_rect().size.x + (get_viewport_rect().size.x / 2),  get_viewport_rect().size.y / 2 + (0 - get_viewport_rect().size.y * GameManager.y_modifier))
+		$GUI.position = Vector2(get_viewport_rect().size.x, -(get_viewport_rect().size.y * GameManager.y_modifier))
 
 # things left to do:
 

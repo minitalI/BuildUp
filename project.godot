@@ -28,7 +28,9 @@ AudioManager="*res://audio_manager.tscn"
 
 [display]
 
+window/size/borderless=true
 window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [editor]
 

@@ -2,101 +2,103 @@
 
 [ext_resource type="PackedScene" uid="uid://c4em74yyucn8d" path="res://objects/chair/chair.tscn" id="1_5hph3"]
 [ext_resource type="PackedScene" uid="uid://d2ktts2a1wqf2" path="res://respawn_anchor.tscn" id="1_j7kpp"]
-[ext_resource type="PackedScene" uid="uid://itc1rvfoy4g5" path="res://floor.tscn" id="2_j7kpp"]
+[ext_resource type="PackedScene" path="res://floor.tscn" id="2_j7kpp"]
 [ext_resource type="PackedScene" uid="uid://wobeeo3tc1lt" path="res://objects/filing_cabinet/filingCabinet.tscn" id="3_bjebc"]
 [ext_resource type="PackedScene" uid="uid://djw8diwd8haen" path="res://objects/table/table.tscn" id="4_5rr72"]
 [ext_resource type="PackedScene" uid="uid://lggbbl7w6sam" path="res://wall.tscn" id="5_gyffv"]
 
 [node name="Level 1" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [650.0, -1.0]
+metadata/_edit_vertical_guides_ = [0.0, 1150.0]
 
 [node name="Respawn Anchor" parent="." instance=ExtResource("1_j7kpp")]
-position = Vector2(46, 568)
+position = Vector2(50, 575)
 
 [node name="chair2" parent="." instance=ExtResource("1_5hph3")]
-position = Vector2(742, 577)
+position = Vector2(746, 584)
 
 [node name="chair3" parent="." instance=ExtResource("1_5hph3")]
-position = Vector2(459, 578)
+position = Vector2(463, 585)
 scale = Vector2(-1, 1)
 
 [node name="chair4" parent="." instance=ExtResource("1_5hph3")]
-position = Vector2(889, 577)
+position = Vector2(893, 584)
 scale = Vector2(-1, 1)
 
 [node name="Floor" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(78, 609)
+position = Vector2(82, 616)
 
 [node name="Floor10" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(206, 609)
+position = Vector2(210, 616)
 
 [node name="Floor11" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(334, 609)
+position = Vector2(338, 616)
 
 [node name="Floor12" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(462, 609)
+position = Vector2(466, 616)
 
 [node name="Floor13" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(590, 609)
+position = Vector2(594, 616)
 
 [node name="Floor14" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(718, 609)
+position = Vector2(722, 616)
 
 [node name="Floor15" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(846, 609)
+position = Vector2(850, 616)
 
 [node name="Floor16" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(974, 609)
+position = Vector2(978, 616)
 
 [node name="Floor17" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(1102, 609)
+position = Vector2(1106, 616)
 
 [node name="Floor2" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(5, 256)
+position = Vector2(9, 263)
 
 [node name="Floor18" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(133, 256)
+position = Vector2(137, 263)
 
 [node name="Floor19" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(261, 256)
+position = Vector2(265, 263)
 
 [node name="Floor20" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(389, 256)
+position = Vector2(393, 263)
 
 [node name="Floor21" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(517, 256)
+position = Vector2(521, 263)
 
 [node name="FilingCabinet" parent="." instance=ExtResource("3_bjebc")]
-position = Vector2(1102, 577)
+position = Vector2(1106, 584)
 
 [node name="FilingCabinet2" parent="." instance=ExtResource("3_bjebc")]
-position = Vector2(1059, 577)
+position = Vector2(1063, 584)
 
 [node name="FilingCabinet3" parent="." instance=ExtResource("3_bjebc")]
-position = Vector2(1059, 521)
+position = Vector2(1063, 528)
 
 [node name="FilingCabinet4" parent="." instance=ExtResource("3_bjebc")]
-position = Vector2(1102, 521)
+position = Vector2(1106, 528)
 
 [node name="Floor24" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(901, 256)
+position = Vector2(905, 263)
 
 [node name="Floor25" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(1029, 256)
+position = Vector2(1033, 263)
 
 [node name="Floor32" parent="." instance=ExtResource("2_j7kpp")]
-position = Vector2(1157, 256)
+position = Vector2(1161, 263)
 
 [node name="table2" parent="." instance=ExtResource("4_5rr72")]
-position = Vector2(816, 578)
+position = Vector2(820, 585)
 
 [node name="Wall" parent="." instance=ExtResource("5_gyffv")]
-position = Vector2(523, 496)
+position = Vector2(527, 503)
 scale = Vector2(1, 3.5)
 
 [node name="Wall7" parent="." instance=ExtResource("5_gyffv")]
-position = Vector2(22, 320)
+position = Vector2(26, 327)
 scale = Vector2(1, 10)
 
 [node name="Wall3" parent="." instance=ExtResource("5_gyffv")]
-position = Vector2(1148, 321)
+position = Vector2(1152, 328)
 scale = Vector2(1, 10)

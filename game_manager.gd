@@ -13,6 +13,8 @@ const static_object_limits = [2, 2, 6, 100, 10] # could make this the same as ob
 var in_menu = false
 var time: int = 0
 var start_time = Time.get_unix_time_from_system()
+const LEVEL_WIDTH = 1150
+const LEVEL_HEIGHT = 650
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,30 +27,10 @@ func set_position_modifiers():
 		y_modifier = 0
 		x_modifier = 0
 		var temp_pos = PlayerState.position
-		
-		while temp_pos.x != 0 or temp_pos.y != 0:
-			var viewport_size = get_viewport().size
-			if temp_pos.x >= viewport_size.x:
-				temp_pos.x -= viewport_size.x
-				x_modifier -= 1
-				
-			elif temp_pos.x < 0:
-				temp_pos.x += viewport_size.x
-				x_modifier += 1
-			
-			if int(temp_pos.x / viewport_size.x) == 0:
-				temp_pos.x = 0
-				
-			if temp_pos.y >= viewport_size.y:
-				temp_pos.y -= viewport_size.y
-				y_modifier -= 1
-				
-			elif temp_pos.y < 0:
-				temp_pos.y += viewport_size.y
-				y_modifier += 1
-			
-			if int(temp_pos.y / viewport_size.y) == 0 and temp_pos.y >= 0:
-				temp_pos.y = 0
+		var viewport_size = get_viewport().size
+		x_modifier = floor(temp_pos.x / LEVEL_WIDTH)
+		y_modifier = abs(floor(temp_pos.y / LEVEL_HEIGHT))
+		print("fdsgihlou")
 		
 
 

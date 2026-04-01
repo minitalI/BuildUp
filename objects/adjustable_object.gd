@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	
 func adjust_position():
 		
-	position = Vector2(get_viewport().get_mouse_position().x - (get_viewport().size.x * (GameManager.x_modifier)), get_viewport().get_mouse_position().y - (get_viewport().size.y * (GameManager.y_modifier)))
+	position = Vector2(get_viewport().get_mouse_position().x + (GameManager.LEVEL_WIDTH * (GameManager.x_modifier)), get_viewport().get_mouse_position().y - (GameManager.LEVEL_HEIGHT * (GameManager.y_modifier)))
 		
 	if Input.is_action_just_pressed("grab"):
 		position_adjusted = true

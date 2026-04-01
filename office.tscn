@@ -49,7 +49,7 @@ texture = ExtResource("2_wruqr")
 [node name="Level 1" parent="." instance=ExtResource("4_3xqf3")]
 
 [node name="Level 2" parent="." instance=ExtResource("5_wruqr")]
-position = Vector2(3.0517578e-05, 7.6293945e-06)
+position = Vector2(3.0517578e-05, -0.9999924)
 
 [node name="Level 3" parent="." instance=ExtResource("5_lcwox")]
 
